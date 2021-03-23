@@ -1,0 +1,42 @@
+<!-- 1-1) Aside-->
+<div class="d-flex justify-content-between p-3">
+    <button class="btn btn-secondary" (click)="show()">Search for places</button>
+    <button class="locationBtn btn-secondary" title="Current Location" (click)="restoreCurrentLocation()"></button>
+</div>
+
+<div class="asideBox2 d-flex justify-content-center mt-3">
+    <img id="imgToday" class="d-block todayWeather" src="../../../assets/images/Shower.png">
+</div>
+
+<!--celcius-->
+<h1 class="text-center text-light mt-5 mb-5 cel">{{weatherInfo[0].the_temp | round}} °C</h1>
+<!--fahrenheit-->
+<h1 class="d-none fah">{{weatherInfo[0].max_temp | Fahrenheit}} °F</h1>
+
+<h3 class="text-center text-light mb-5">{{weatherInfo[0].weather_state_name}}</h3>
+<p class="text-center text-light">today &#12539; {{weatherInfo[0].applicable_date | date:'mediumDate'}}</p>
+
+<div class="location d-flex justify-content-center mt-5 mb-3">
+    <img height="20px" width="20px" src="../../../assets/images/mapPointer.png">
+    <p class="text-light d-inline-block ml-2">{{location.title}}</p>
+</div>
+
+<!-- 1-2) Sidebar-->
+<div class="sidebar" id="sidebar">
+    <div class="d-flex flex-row justify-content-end">
+        <button class="btn text-light" id="close-btn" (click)="closeWindow()">X</button>
+    </div>
+
+    <div class="d-flex justify-content-between p-3">
+        <input id="inputLocation" class="search pl-2 pt-2 pb-2" type="text" placeholder="Search Location">
+        <button class="btn btn-primary" (click)="searchPosibleLocations()">Search</button>
+    </div>
+
+    <div class="p-3" *ngFor="let Location of posibleLocations;">
+        <button class="option-btn p-3" (click)="changeCurrentLocation(Location)">{{Location.title}}</button>
+    </div>
+
+    <div *ngIf="noResult==true">
+        <h3 id="NoResults">No results</h3>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.main{
+    height: 100%;
+}
+
+.mainContainer{
+    height: 100%;
+}
+
+app-aside{
+    background-color: #193366;
+    min-height: 100%;
+}
+
+app-section{
+    background-color: #001133;
+    min-height: 100%;
+}

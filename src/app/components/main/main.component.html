@@ -1,0 +1,10 @@
+<!--MainApp-->
+<div class="container-fluid main" [ngStyle]="{'overflow-y':event1==undefined || true ? 'auto' : 'hidden'}">
+    <div class="row mainContainer" id="mainContainer" *ngIf="currentLocation && daysWeatherInfo">
+        <app-aside class="col-12 col-lg-4" [event2_State]="event2" (event1)="receiveEvent1($event)">
+        </app-aside>
+        <app-section class="col-12 col-lg-8" [event1_State]="event1" (event2)="receiveEvent2($event)">
+        </app-section>
+    </div>
+</div>
+

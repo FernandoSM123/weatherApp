@@ -1,0 +1,137 @@
+<!--Section-->
+
+<div class="overlay" id="overlay"></div>
+
+<div class="row d-flex justify-content-end p-4">
+    <button class="btn btn-light btn-celcius mr-2 rounded-circle text-center font-weight-bold" title="Celcius"
+        (click)="changeTempUnit(true)">°C</button>
+    <button class="btn btn-primary btn-fahrenheit rounded-circle text-center font-weight-bold" title="Fahrenheit"
+        (click)="changeTempUnit(false)">°F</button>
+</div>
+
+<!--5 days-->
+<div class="row d-flex justify-content-center p-3">
+
+    <div class="col-5 col-sm-3 bg bg-primary mr-3 mb-4 d-flex flex-column justify-content-between">
+        <p class="text-light text-center pt-3">Tomorrow</p>
+        <img id="img1" class="weatherIcon d-block" src="../../../assets/images/Shower.png">
+        <!--Celcius-->
+        <div class="row d-flex justify-content-around cel">
+            <p class="text-light text-center mt-2">{{weatherInfo[1].min_temp | round}} °C</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[1].max_temp | round}} °C</p>
+        </div>
+        <!--fahrenheit-->
+        <div class="d-none fah">
+            <p class="text-light text-center mt-2">{{weatherInfo[1].min_temp | Fahrenheit}} °F</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[1].max_temp | Fahrenheit}} °F</p>
+        </div>
+    </div>
+
+    <div class="col-5 col-sm-3 bg bg-primary mr-3 mb-4 d-flex flex-column justify-content-between">
+        <p class="text-light text-center pt-3">{{weatherInfo[2].applicable_date | date:'mediumDate'}}</p>
+        <img id="img2" class="weatherIcon d-block" src="../../../assets/images/Shower.png">
+        <!--Celcius-->
+        <div class="row d-flex justify-content-around cel">
+            <p class="text-light text-center mt-2">{{weatherInfo[2].min_temp | round}} °C</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[2].max_temp | round}} °C</p>
+        </div>
+        <!--fahrenheit-->
+        <div class="d-none fah">
+            <p class="text-light text-center mt-2">{{weatherInfo[2].min_temp | Fahrenheit}} °F</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[2].max_temp | Fahrenheit}} °F</p>
+        </div>
+    </div>
+
+    <div class=" col-5 col-sm-3 bg bg-primary mr-3 mb-4 d-flex flex-column justify-content-between">
+        <p class="text-light text-center pt-3">{{weatherInfo[3].applicable_date | date:'mediumDate'}}</p>
+        <img id="img3" class="weatherIcon d-block" src="../../../assets/images/Shower.png">
+        <!--Celcius-->
+        <div class="row d-flex justify-content-around cel">
+            <p class="text-light text-center mt-2">{{weatherInfo[3].min_temp | round}} °C</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[3].max_temp | round}} °C</p>
+        </div>
+        <!--fahrenheit-->
+        <div class="d-none fah">
+            <p class="text-light text-center mt-2">{{weatherInfo[3].min_temp | Fahrenheit}} °F</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[3].max_temp | Fahrenheit}} °F</p>
+        </div>
+    </div>
+
+    <div class=" col-5 col-sm-3 bg bg-primary mr-3 mb-4 d-flex flex-column justify-content-between">
+        <p class="text-light text-center pt-3">{{weatherInfo[4].applicable_date | date:'mediumDate'}}</p>
+        <img id="img4" class="weatherIcon d-block" src="../../../assets/images/Shower.png">
+        <!--Celcius-->
+        <div class="row d-flex justify-content-around cel">
+            <p class="text-light text-center mt-2">{{weatherInfo[4].min_temp | round}} °C</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[4].max_temp | round}} °C</p>
+        </div>
+        <!--fahrenheit-->
+        <div class="d-none fah">
+            <p class="text-light text-center mt-2">{{weatherInfo[4].min_temp | Fahrenheit}} °F</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[4].max_temp | Fahrenheit}} °F</p>
+        </div>
+    </div>
+
+    <div class=" col-5 col-sm-3 bg bg-primary mb-4 d-flex flex-column justify-content-between">
+        <p class="text-light text-center pt-3">{{weatherInfo[5].applicable_date | date:'mediumDate'}}</p>
+        <img id="img5" class="weatherIcon d-block" src="../../../assets/images/Shower.png">
+        <!--Celcius-->
+        <div class="row d-flex justify-content-around cel">
+            <p class="text-light text-center mt-2">{{weatherInfo[5].min_temp | round}} °C</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[5].max_temp | round}} °C</p>
+        </div>
+        <!--fahrenheit-->
+        <div class="d-none fah">
+            <p class="text-light text-center mt-2">{{weatherInfo[5].min_temp | Fahrenheit}} °F</p>
+            <p class="text-light text-center mt-2">{{weatherInfo[5].max_temp | Fahrenheit}} °F</p>
+        </div>
+    </div>
+
+</div>
+
+<!--Day info-->
+<h3 class=" text-light mt-5 mb-1 text-center">Today's Hightlights</h3>
+<div class="row mt-3 d-flex justify-content-center p-3">
+
+    <!--Wind Status-->
+    <div class="col-12 col-sm-5 bg bg-primary mr-sm-4 mb-4 mb-sm-0">
+        <p class="text-light text-center mt-3">Wind Status</p>
+        <h1 class="text-light text-center mt-3">{{weatherInfo[0].wind_speed | round}} mph</h1>
+        <!--Wind direccion-->
+        <div class="d-flex justify-content-center mt-2">
+            <img id="windImg" src="../../../assets/images/windRose/East.png">
+        </div>
+        <p class="text-light text-center mt-3 mb-4">{{weatherInfo[0].wind_direction_compass}}</p>
+    </div>
+
+    <!--Humedad-->
+    <div class="col-12 col-sm-5 bg bg-primary">
+        <p class="text-light text-center mt-3">Humidity</p>
+        <h1 class="text-light text-center mt-3">{{weatherInfo[0].humidity}}%</h1>
+        <div class="progress mt-3 mb-3">
+            <div class="progress-bar bg-warning" id="progressBar" role="progressbar" style="width: 50%"
+                aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-0 mt-sm-5 d-flex justify-content-center p-3">
+
+    <!--visibility-->
+    <div class="col-12 col-sm-5 bg bg-primary mr-sm-4 mb-4 mb-sm-0">
+        <p class="text-light text-center mt-3">Visibility</p>
+        <h1 class="text-light text-center mt-3 mb-4">{{weatherInfo[0].visibility | round}} miles</h1>
+    </div>
+
+    <!--air pressure-->
+    <div class="col-12 col-sm-5 bg bg-primary mb-4 mb-sm-0">
+        <p class="text-light text-center mt-3">Air pressure</p>
+        <h1 class="text-light text-center mt-3 mb-4">{{weatherInfo[0].air_pressure | round}} mb</h1>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="mt-5">
+    <p class="text-light text-center align-self-end"> Created by <u>Fernando SM</u> - DevChallenges.io</p>
+</footer>

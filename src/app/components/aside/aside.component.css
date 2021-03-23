@@ -1,0 +1,110 @@
+
+/*1-Aside*/
+
+.asideBox2{
+position: relative;
+}
+    
+.asideBox2::after{
+content: "";
+background-image: url(../../../assets/images/Cloud-background.png);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: absolute;
+opacity: 0.3;
+top: 0px;
+right: 0px;
+bottom: 0px;
+left: 0px;
+}
+
+.locationBtn{
+    background-image: url(../../../assets/images/location.png);
+    background-size: 24px 24px;
+    background-position: center center;
+    width: 40px;
+    border: none;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+}
+
+.todayWeather{
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+/*2-Sidebar*/
+
+#close-btn:hover{
+    color: #808080 !important;
+}
+
+.sidebar{
+    background-color: #193366;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    transition: left 500ms;
+    overflow: auto;
+}
+
+.sidebar.active 
+{ 
+    left: 0%;
+    display: block; 
+}
+
+.search{
+    background-color: #193366; 
+    color: white;
+    border: 1px solid white;
+    width: 70%;
+}
+
+.search::placeholder { 
+    color: #808080;
+}
+
+.search:focus{
+      outline: none;
+      border-color: #808080;
+}
+
+.option-btn{
+    width: 100%;
+    color: white;
+    background-color: #193366;
+    border: none;
+    text-align: left;
+}
+
+.option-btn:focus{
+    outline:none;
+    color: #808080;
+}
+
+.option-btn:hover{
+    border: solid 1px #808080;
+}
+
+#NoResults{
+    color:white;
+    text-align: center;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .sidebar{
+        width: 33%;
+    }
+}
