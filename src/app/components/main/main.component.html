@@ -1,3 +1,13 @@
+<!--Spinner-->
+<ngx-spinner 
+bdColor = "white" 
+size = "medium" 
+color = "black" 
+type = "ball-running-dots" 
+[fullScreen] = "true">
+<p style="color: black" > Loading... </p>
+</ngx-spinner>
+
 <!--MainApp-->
 <div class="container-fluid main" [ngStyle]="{'overflow-y':event1==undefined || true ? 'auto' : 'hidden'}">
     <div class="row mainContainer" id="mainContainer" *ngIf="currentLocation && daysWeatherInfo">
